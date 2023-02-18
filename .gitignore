@@ -4,3 +4,4 @@ obj
 Properties
 appsettings.Development.json
 .vscode
+*.user
