@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using WingetCacheServer.Models;
 using WingetCacheServer.Services;
 
 namespace WingetCacheServer.Controllers;
@@ -15,6 +16,21 @@ public class ProxyController: ControllerBase
     {
         this.client = client;
         this.logger = logger;
+    }
+
+    [HttpGet("information")]
+    public IActionResult Information()
+    {
+        return this.Ok(new InformationModel
+        {
+            DataModel = new Data()
+        });
+    }
+
+    [HttpPost("manifestSearch")]
+    public IActionResult ManifestSearch([FromBody]SearchAddressModel model)
+    {
+        return this.Ok();
     }
 
     [Route("{**path}")]
