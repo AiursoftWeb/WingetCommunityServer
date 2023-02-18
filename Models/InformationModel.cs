@@ -36,7 +36,7 @@ public class SourceAgreements
     public List<AgreementsItem> Agreements { get; set; } = new List<AgreementsItem>();
 }
 
-public class Data
+public class InformationData
 {
     /// <summary>
     /// 
@@ -63,6 +63,8 @@ public class Data
     /// 
     /// </summary>
     public List<string> RequiredPackageMatchFields { get; set; } = new List<string>();
+
+
 }
 
 public class InformationModel
@@ -76,5 +78,5 @@ public class InformationModel
     /// 
     /// </summary>
     [JsonProperty(PropertyName = "Data")]
-    public Data DataModel { get; set; }
+    public InformationData DataModel { get; set; }
 }

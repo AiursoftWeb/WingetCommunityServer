@@ -23,7 +23,7 @@ public class ProxyController: ControllerBase
     {
         return this.Ok(new InformationModel
         {
-            DataModel = new Data()
+            DataModel = new InformationData()
         });
     }
 
@@ -36,15 +36,25 @@ public class ProxyController: ControllerBase
         });
     }
 
-    [Route("{**path}")]
-    public async Task<IActionResult> Proxy([FromRoute]string path)
+    [HttpGet("packageManifests/{**packageIdentifier}")]
+    public IActionResult PackageManifests([FromRoute]string packageIdentifier)
     {
-        logger.LogInformation($"Proxying path: {path}");
-
-        // var request = HttpContext.CreateProxyHttpRequest(new Uri(url));
-        // var response = await client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, HttpContext.RequestAborted);
-        // await HttpContext.CopyProxyHttpResponse(response);
-
-        return new EmptyResult();
+        logger.LogInformation($"Get package id: {packageIdentifier}");
+        return this.Ok(new PackageManifestModel
+        {
+            Data = new PackageManifestData()
+        });
     }
+
+    //[Route("{**path}")]
+    //public async Task<IActionResult> Proxy([FromRoute]string path)
+    //{
+    //    logger.LogInformation($"Proxying path: {path}");
+
+    //    var request = HttpContext.CreateProxyHttpRequest(new Uri("https://www.baidu.com"));
+    //    var response = await client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, HttpContext.RequestAborted);
+    //    await HttpContext.CopyProxyHttpResponse(response);
+
+    //    return new EmptyResult();
+    //}
 }

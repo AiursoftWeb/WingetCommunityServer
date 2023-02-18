@@ -2,7 +2,7 @@
 
 namespace WingetCacheServer.Models;
 
-public class VersionsItem
+public class SearchVersionsItem
 {
     /// <summary>
     /// 
@@ -13,7 +13,7 @@ public class VersionsItem
     /// <summary>
     /// 
     /// </summary>
-    public string PackageVersion { get; set; } = "1.0.0-fake";
+    public string PackageVersion { get; set; } = Consts.FakePackageVersion;
 }
  
 public class DataItem
@@ -27,22 +27,22 @@ public class DataItem
     /// <summary>
     /// 
     /// </summary>
-    public string PackageIdentifier { get; set; } = "VideoLAN.VLC";
+    public string PackageIdentifier { get; set; } = Consts.FakePackageIdentifier;
 
     /// <summary>
     /// 
     /// </summary>
-    public string PackageName { get; set; } = "VLC";
+    public string PackageName { get; set; } = Consts.FakePackageName;
 
     /// <summary>
     /// 
     /// </summary>
-    public string Publisher { get; set; } = "VideoLAN";
+    public string Publisher { get; set; } = Consts.FakePackagePublisher;
 
     /// <summary>
     /// 
     /// </summary>
-    public List<VersionsItem> Versions { get; set; } = new List<VersionsItem> { new VersionsItem() };
+    public List<SearchVersionsItem> Versions { get; set; } = new List<SearchVersionsItem> { new SearchVersionsItem() };
 }
  
 public class ManifestSearchModel
@@ -51,7 +51,7 @@ public class ManifestSearchModel
     /// 
     /// </summary>
     [JsonProperty(PropertyName = "$type")]
-    public string Type { get; set; }
+    public string Type { get; set; } = Consts.CommonType;
 
     /// <summary>
     /// 
