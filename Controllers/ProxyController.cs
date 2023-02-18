@@ -30,7 +30,10 @@ public class ProxyController: ControllerBase
     [HttpPost("manifestSearch")]
     public IActionResult ManifestSearch([FromBody]SearchAddressModel model)
     {
-        return this.Ok();
+        return this.Ok(new ManifestSearchModel
+        {
+            Data = new List<DataItem>() { new DataItem() }
+        });
     }
 
     [Route("{**path}")]

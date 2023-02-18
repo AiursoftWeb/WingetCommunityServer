@@ -1,6 +1,5 @@
 ﻿namespace WingetCacheServer.Models;
 
-
 public class Query
 {
     /// <summary>
