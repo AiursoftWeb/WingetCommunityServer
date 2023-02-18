@@ -25,17 +25,17 @@ public class DefaultLocale
     /// <summary>
     /// 
     /// </summary>
-    public string PublisherUrl { get; set; }
+    public string PublisherUrl { get; set; } = "";
 
     /// <summary>
     /// 
     /// </summary>
-    public string PrivacyUrl { get; set; }
+    public string PrivacyUrl { get; set; } = "";
 
     /// <summary>
     /// 
     /// </summary>
-    public string PublisherSupportUrl { get; set; }
+    public string PublisherSupportUrl { get; set; } = "";
 
     /// <summary>
     /// 
@@ -45,31 +45,31 @@ public class DefaultLocale
     /// <summary>
     /// 
     /// </summary>
-    public string License { get; set; }
+    public string License { get; set; } = "";
 
     /// <summary>
     /// 
     /// </summary>
-    public string Copyright { get; set; }
+    public string Copyright { get; set; } = "";
 
     /// <summary>
     /// 
     /// </summary>
-    public string ShortDescription { get; set; }
+    public string ShortDescription { get; set; } = "Guess what?";
 
     /// <summary>
     /// 
     /// </summary>
-    public string Description { get; set; }
+    public string Description { get; set; } = "Guess what?";
 
     /// <summary>
     /// 
     /// </summary>
-    public List<string> Tags { get; set; }
+    public List<string> Tags { get; set; } = new List<string>();
     /// <summary>
     /// 
     /// </summary>
-    public List<AgreementsItem> Agreements { get; set; }
+    public List<AgreementsItem> Agreements { get; set; } = new List<AgreementsItem>();
 }
  
 public class InstallerSwitches
@@ -81,9 +81,10 @@ public class InstallerSwitches
     public string Type { get; set; } = Consts.CommonType;
 
     /// <summary>
-    /// The argument passed to installer to start silent installation
+    /// The args passed to installer to start silent installation
+    /// For msi/wix packages, winget default to quiet installation, so no args set here
     /// </summary>
-    public string Silent { get; set; } = "/S";
+    public string Silent { get; set; } = "";
 }
  
 public class AppsAndFeaturesEntriesItem
@@ -97,27 +98,28 @@ public class AppsAndFeaturesEntriesItem
     /// <summary>
     /// 
     /// </summary>
-    public string DisplayName { get; set; }
+    public string DisplayName { get; set; } = "";
 
     /// <summary>
     /// 
     /// </summary>
-    public string Publisher { get; set; }
+    public string Publisher { get; set; } = "";
 
     /// <summary>
     /// 
     /// </summary>
-    public string DisplayVersion { get; set; }
+    public string DisplayVersion { get; set; } = "";
 
     /// <summary>
     /// 
     /// </summary>
-    public string ProductCode { get; set; }
+    public string ProductCode { get; set; } = "";
 
     /// <summary>
-    /// 
+    /// Available types: 
+    /// https://github.com/microsoft/winget-cli/blob/master/src/AppInstallerCommonCore/Manifest/ManifestCommon.cpp
     /// </summary>
-    public string InstallerType { get; set; }
+    public string InstallerType { get; set; } = Consts.FakePackageInstallType;
 }
  
 public class Markets
@@ -131,7 +133,7 @@ public class Markets
     /// <summary>
     /// 
     /// </summary>
-    public List<string> AllowedMarkets { get; set; }
+    public List<string> AllowedMarkets { get; set; } = new List<string>() { };
 }
  
 public class InstallersItem
@@ -165,7 +167,7 @@ public class InstallersItem
     /// <summary>
     /// 
     /// </summary>
-    public List<AppsAndFeaturesEntriesItem> AppsAndFeaturesEntries { get; set; }
+    public List<AppsAndFeaturesEntriesItem> AppsAndFeaturesEntries { get; set; } = new List<AppsAndFeaturesEntriesItem>() { new AppsAndFeaturesEntriesItem() };
     /// <summary>
     /// 
     /// </summary>
@@ -181,7 +183,7 @@ public class InstallersItem
     /// <summary>
     /// 
     /// </summary>
-    public string Scope { get; set; }
+    public string Scope { get; set; } = "machine";
 }
 
 public class PackageManifestVersionsItem

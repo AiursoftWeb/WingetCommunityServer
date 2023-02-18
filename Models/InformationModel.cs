@@ -63,8 +63,6 @@ public class InformationData
     /// 
     /// </summary>
     public List<string> RequiredPackageMatchFields { get; set; } = new List<string>();
-
-
 }
 
 public class InformationModel
