@@ -12,7 +12,7 @@ public class Consts
 
     public const string FakePackageIdentifier = $"{FakePackagePublisher}.{FakePackageName}";
 
-    public const string FakePackageVersion = "1.0.0-fake";
+    public const string FakePackageVersion = "99.9.9-fake";
 
     public const string FakePackageInstallType = "wix";
 
