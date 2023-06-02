@@ -1,16 +1,16 @@
-﻿namespace WingetCacheServer.Models;
+﻿namespace WingetCommunityServer.Models;
 
 public class Query
 {
     /// <summary>
     /// 
     /// </summary>
-    public string KeyWord { get; set; }
+    public string? KeyWord { get; set; }
 
     /// <summary>
     /// 
     /// </summary>
-    public string MatchType { get; set; }
+    public string? MatchType { get; set; }
 }
 
 public class Inclusion
@@ -18,12 +18,12 @@ public class Inclusion
     /// <summary>
     /// 
     /// </summary>
-    public string PackageMatchField { get; set; }
+    public string? PackageMatchField { get; set; }
 
     /// <summary>
     /// 
     /// </summary>
-    public Query RequestMatch { get; set; }
+    public Query? RequestMatch { get; set; }
 }
 
 public class SearchAddressModel
@@ -31,10 +31,10 @@ public class SearchAddressModel
     /// <summary>
     /// Query with keyword
     /// </summary>
-    public Query Query { get; set; }
+    public Query? Query { get; set; }
 
     /// <summary>
     /// Inclusions
     /// </summary>
-    public List<Inclusion> Inclusions { get; set; }
+    public List<Inclusion> Inclusions { get; set; } = new List<Inclusion>();
 }

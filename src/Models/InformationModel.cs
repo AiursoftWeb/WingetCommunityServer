@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace WingetCacheServer.Models;
+namespace WingetCommunityServer.Models;
 
 public class AgreementsItem
 {
@@ -76,5 +76,5 @@ public class InformationModel
     /// 
     /// </summary>
     [JsonProperty(PropertyName = "Data")]
-    public InformationData DataModel { get; set; }
+    public InformationData? DataModel { get; set; }
 }

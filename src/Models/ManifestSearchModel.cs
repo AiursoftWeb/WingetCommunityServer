@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace WingetCacheServer.Models;
+namespace WingetCommunityServer.Models;
 
 public class SearchVersionsItem
 {
@@ -56,6 +56,6 @@ public class ManifestSearchModel
     /// <summary>
     /// 
     /// </summary>
-    public List<DataItem> Data { get; set; }
+    public List<DataItem> Data { get; set; } = new List<DataItem>();
 }
 

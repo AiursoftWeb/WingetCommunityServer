@@ -1,4 +1,4 @@
-namespace WingetCacheServer.Services;
+namespace WingetCommunityServer.Services;
 
 public static class ProxyService
 {

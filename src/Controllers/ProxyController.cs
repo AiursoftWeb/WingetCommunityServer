@@ -1,20 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
-using WingetCacheServer.Models;
-using WingetCacheServer.Services;
+using WingetCommunityServer.Models;
 
-namespace WingetCacheServer.Controllers;
+namespace WingetCommunityServer.Controllers;
 
 [Route("api")]
 public class ProxyController: ControllerBase
 {
-    private readonly HttpClient client;
     private readonly ILogger<ProxyController> logger;
 
     public ProxyController(
-        HttpClient client,
         ILogger<ProxyController> logger)
     {
-        this.client = client;
         this.logger = logger;
     }
 

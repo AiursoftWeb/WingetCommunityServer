@@ -1,8 +1,6 @@
-﻿using Microsoft.VisualBasic;
-using Newtonsoft.Json;
-using WingetCacheServer.Models;
+﻿using Newtonsoft.Json;
 
-namespace WingetCacheServer.Models;
+namespace WingetCommunityServer.Models;
 
 public class DefaultLocale
 {
@@ -133,7 +131,7 @@ public class Markets
     /// <summary>
     /// 
     /// </summary>
-    public List<string> AllowedMarkets { get; set; } = new List<string>() { };
+    public List<string> AllowedMarkets { get; set; } = new List<string>();
 }
  
 public class InstallersItem
@@ -207,7 +205,7 @@ public class PackageManifestVersionsItem
     /// <summary>
     /// 
     /// </summary>
-    public List<string> Locales { get; set; } = new List<string> {};
+    public List<string> Locales { get; set; } = new List<string>();
 
     /// <summary>
     /// 
@@ -245,5 +243,5 @@ public class PackageManifestModel
     /// <summary>
     /// 
     /// </summary>
-    public PackageManifestData Data { get; set; }
+    public PackageManifestData? Data { get; set; }
 }
