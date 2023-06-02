@@ -4,12 +4,12 @@ using WingetCommunityServer.Models;
 namespace WingetCommunityServer.Controllers;
 
 [Route("api")]
-public class ProxyController: ControllerBase
+public class ApiController: ControllerBase
 {
-    private readonly ILogger<ProxyController> logger;
+    private readonly ILogger<ApiController> logger;
 
-    public ProxyController(
-        ILogger<ProxyController> logger)
+    public ApiController(
+        ILogger<ApiController> logger)
     {
         this.logger = logger;
     }
@@ -17,10 +17,7 @@ public class ProxyController: ControllerBase
     [HttpGet("information")]
     public IActionResult Information()
     {
-        return this.Ok(new InformationModel
-        {
-            DataModel = new InformationData()
-        });
+        return this.Ok(new InformationModel());
     }
 
     [HttpPost("manifestSearch")]
@@ -41,16 +38,4 @@ public class ProxyController: ControllerBase
             Data = new PackageManifestData()
         });
     }
-
-    //[Route("{**path}")]
-    //public async Task<IActionResult> Proxy([FromRoute]string path)
-    //{
-    //    logger.LogInformation($"Proxying path: {path}");
-
-    //    var request = HttpContext.CreateProxyHttpRequest(new Uri("https://www.baidu.com"));
-    //    var response = await client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, HttpContext.RequestAborted);
-    //    await HttpContext.CopyProxyHttpResponse(response);
-
-    //    return new EmptyResult();
-    //}
 }

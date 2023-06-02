@@ -40,6 +40,44 @@ docker run -d -p 8080:80 wcs
 
 That will start a web server at `http://localhost:8080` and you can test the app.
 
+## How to connect with Winget client
+
+First, you need to know the endpoint of your server. For example, `https://localhost:8080/api`.
+
+Then, you need to add the source to your winget client.
+
+```bash
+winget source add -n local-server https://localhost:8080/api -t Microsoft.Rest
+```
+
+Now you can search and install packages.
+
+```bash
+winget search vlc --source local-server
+winget install vlc --source local-server
+```
+
+### Additional tips
+
+To view the added source:
+
+```bash
+winget source list --name local-server
+```
+
+You can delete existing system sources via:
+
+```bash
+winget source remove winget
+winget source remove msstore
+```
+
+To reset everything to default:
+
+```bash
+winget source reset --force
+```
+
 ## How to contribute
 
 There are many ways to contribute to the project: logging bugs, submitting pull requests, reporting issues, and creating suggestions.

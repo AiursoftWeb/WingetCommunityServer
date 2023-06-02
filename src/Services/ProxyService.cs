@@ -56,12 +56,7 @@ public static class ProxyService
         // SendAsync removes chunking from the response. This removes the header so it doesn't expect a chunked response.
         response.Headers.Remove("transfer-encoding");
 
-        using (var responseStream = await responseMessage.Content.ReadAsStreamAsync())
-        {
-            await responseStream.CopyToAsync(response.Body, 100 * 1024, context.RequestAborted);
-        }
+        await using var responseStream = await responseMessage.Content.ReadAsStreamAsync();
+        await responseStream.CopyToAsync(response.Body, 100 * 1024, context.RequestAborted);
     }
-
-
-
 }

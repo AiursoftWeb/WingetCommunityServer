@@ -33,7 +33,7 @@ public class SourceAgreements
     /// <summary>
     /// 
     /// </summary>
-    public List<AgreementsItem> Agreements { get; set; } = new List<AgreementsItem>();
+    public List<AgreementsItem> Agreements { get; set; } = new();
 }
 
 public class InformationData
@@ -50,19 +50,19 @@ public class InformationData
     /// <summary>
     /// 
     /// </summary>
-    public SourceAgreements SourceAgreements { get; set; } = new SourceAgreements();
+    public SourceAgreements SourceAgreements { get; set; } = new();
     /// <summary>
     /// 
     /// </summary>
-    public List<string> ServerSupportedVersions { get; set; } = new List<string> { "1.0.0", "1.1.0" };
+    public List<string> ServerSupportedVersions { get; set; } = new() { "1.0.0", "1.1.0" };
     /// <summary>
     /// 
     /// </summary>
-    public List<string> RequiredQueryParameters { get; set; } = new List<string>();
+    public List<string> RequiredQueryParameters { get; set; } = new();
     /// <summary>
     /// 
     /// </summary>
-    public List<string> RequiredPackageMatchFields { get; set; } = new List<string>();
+    public List<string> RequiredPackageMatchFields { get; set; } = new();
 }
 
 public class InformationModel
@@ -72,9 +72,10 @@ public class InformationModel
     /// </summary>
     [JsonProperty(PropertyName = "$type")]
     public string Type { get; set; } = Consts.CommonType;
+
     /// <summary>
     /// 
     /// </summary>
     [JsonProperty(PropertyName = "Data")]
-    public InformationData? DataModel { get; set; }
+    public InformationData? DataModel { get; set; } = new ();
 }
