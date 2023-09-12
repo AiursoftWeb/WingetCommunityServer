@@ -1,16 +1,11 @@
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using static Aiursoft.WebTools.Extends;
 
-var builder = WebApplication.CreateBuilder(args);
+namespace Aiursoft.WingetCommunityServer;
 
-builder.Services.AddHttpClient();
-builder.Services.AddControllers().AddNewtonsoftJson(options =>
+public class Program
 {
-    options.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
-    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
-});
-
-var app = builder.Build();
-app.UseRouting();
-app.MapDefaultControllerRoute();
-app.Run();
+    public static async Task Main(string[] args)
+    {
+        await App<Startup>(args).RunAsync();
+    }
+}
