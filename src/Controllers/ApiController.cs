@@ -6,24 +6,24 @@ namespace WingetCommunityServer.Controllers;
 [Route("api")]
 public class ApiController: ControllerBase
 {
-    private readonly ILogger<ApiController> logger;
+    private readonly ILogger<ApiController> _logger;
 
     public ApiController(
         ILogger<ApiController> logger)
     {
-        this.logger = logger;
+        _logger = logger;
     }
 
     [HttpGet("information")]
     public IActionResult Information()
     {
-        return this.Ok(new InformationModel());
+        return Ok(new InformationModel());
     }
 
     [HttpPost("manifestSearch")]
     public IActionResult ManifestSearch([FromBody]SearchAddressModel model)
     {
-        return this.Ok(new ManifestSearchModel
+        return Ok(new ManifestSearchModel
         {
             Data = new List<DataItem>() { new DataItem() }
         });
@@ -32,8 +32,8 @@ public class ApiController: ControllerBase
     [HttpGet("packageManifests/{**packageIdentifier}")]
     public IActionResult PackageManifests([FromRoute]string packageIdentifier)
     {
-        logger.LogInformation($"Get package id: {packageIdentifier}");
-        return this.Ok(new PackageManifestModel
+        _logger.LogInformation($"Get package id: {packageIdentifier}");
+        return Ok(new PackageManifestModel
         {
             Data = new PackageManifestData()
         });
