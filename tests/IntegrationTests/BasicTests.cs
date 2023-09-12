@@ -9,7 +9,6 @@ namespace Aiursoft.Tracer.Tests.IntegrationTests;
 [TestClass]
 public class BasicTests
 {
-    private static int _messageCount;
     private readonly string _endpointUrl;
     private readonly int _port;
     private readonly HttpClient _http;
