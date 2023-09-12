@@ -1,20 +1,10 @@
 # WingetCommunityServer
 
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/-/blob/master/LICENSE)
-[![Pipeline stat](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/badges/master/pipeline.svg)](https://gitlab.aiursoft.cn/aiursoft/infrastructures/-/pipelines)
-[![Test Coverage](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/badges/master/coverage.svg)](https://gitlab.aiursoft.cn/aiursoft/infrastructures/-/pipelines)
+[![Pipeline stat](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/badges/master/pipeline.svg)](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/-/pipelines)
+[![Test Coverage](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/badges/master/coverage.svg)](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/-/pipelines)
 
 WingetCommunityServer is a self-hosted winget server.
-
-## Run in Ubuntu
-
-First, specify a domain name for your Ubuntu 18.04+, brand-new server.
-
-And execute the following command in the server:
-
-```bash
-curl -sL https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/-/raw/master/install.sh | sudo bash -s http://wcs.local
-```
 
 ## Run locally
 
@@ -28,17 +18,6 @@ Requirements about how to run
 
 1. Open the `.sln` file in the project path.
 2. Press `F5`.
-
-## How to build locally in docker
-
-Just install docker and docker-compose. Execute the following command.
-
-```bash
-docker build -t=wcs .
-docker run -d -p 8080:80 wcs
-```
-
-That will start a web server at `http://localhost:8080` and you can test the app.
 
 ## How to connect with Winget client
 
