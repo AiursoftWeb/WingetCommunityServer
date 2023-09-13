@@ -23,10 +23,10 @@ namespace Aiursoft.WingetCommunityServer
 
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment webHostEnvironment)
+        public void Configure(WebApplication app)
         {
             app.UseRouting();
-            app.UseEndpoints(endpoints => endpoints.MapDefaultControllerRoute());
+            app.MapDefaultControllerRoute();
         }
     }
 }
