@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
 using System.Reflection;
+using Aiursoft.DocGenerator.Services;
 
 namespace Aiursoft.WingetCommunityServer
 {
@@ -20,13 +21,17 @@ namespace Aiursoft.WingetCommunityServer
                 options.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
                 options.SerializerSettings.ContractResolver = new DefaultContractResolver();
             });
-
         }
 
         public void Configure(WebApplication app)
         {
             app.UseRouting();
             app.MapDefaultControllerRoute();
+            app.UseAiursoftDocGenerator(options => 
+            {
+                // TODO: It may say input requires form encoded but actually it is JSON!
+                options.Format = DocFormat.Markdown;
+            });
         }
     }
 }

@@ -1,8 +1,10 @@
+using Aiursoft.DocGenerator.Attributes;
 using Microsoft.AspNetCore.Mvc;
 using WingetCommunityServer.Models;
 
 namespace WingetCommunityServer.Controllers;
 
+[GenerateDoc]
 [Route("api")]
 public class ApiController: ControllerBase
 {
@@ -21,6 +23,7 @@ public class ApiController: ControllerBase
     }
 
     [HttpPost("manifestSearch")]
+    [Produces(typeof(ManifestSearchModel))]
     public IActionResult ManifestSearch([FromBody]SearchAddressModel model)
     {
         return Ok(new ManifestSearchModel
@@ -30,7 +33,8 @@ public class ApiController: ControllerBase
     }
 
     [HttpGet("packageManifests/{**packageIdentifier}")]
-    public IActionResult PackageManifests([FromRoute]string packageIdentifier)
+    [Produces(typeof(PackageManifestModel))]
+    public IActionResult PackageManifests([FromRoute] string packageIdentifier)
     {
         _logger.LogInformation($"Get package id: {packageIdentifier}");
         return Ok(new PackageManifestModel
