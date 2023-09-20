@@ -3,6 +3,9 @@ using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
 using System.Reflection;
 using Aiursoft.DocGenerator.Services;
+using Aiursoft.DbTools;
+using Aiursoft.DbTools.Sqlite;
+using Aiursoft.WingetCommunityServer.Data;
 
 namespace Aiursoft.WingetCommunityServer
 {
@@ -10,6 +13,7 @@ namespace Aiursoft.WingetCommunityServer
     {
         public void ConfigureServices(IConfiguration configuration, IWebHostEnvironment environment, IServiceCollection services)
         {
+            services.AddAiurSqliteWithCache<WingetServerDbContext>("Data Source=app.db");
             services
                 .AddMemoryCache()
                 .AddHttpClient();

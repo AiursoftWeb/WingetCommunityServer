@@ -1,3 +1,5 @@
+using Aiursoft.DbTools;
+using Aiursoft.WingetCommunityServer.Data;
 using static Aiursoft.WebTools.Extends;
 
 namespace Aiursoft.WingetCommunityServer;
@@ -6,6 +8,8 @@ public static class Program
 {
     public static async Task Main(string[] args)
     {
-        await App<Startup>(args).RunAsync();
+        var app = App<Startup>(args);
+        await app.UpdateDbAsync<WingetServerDbContext>(UpdateMode.MigrateThenUse);
+        await app.RunAsync();
     }
 }

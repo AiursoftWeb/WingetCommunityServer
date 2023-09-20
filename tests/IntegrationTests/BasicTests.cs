@@ -3,6 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Extensions.Hosting;
 using static Aiursoft.WebTools.Extends;
 using Aiursoft.WingetCommunityServer;
+using Aiursoft.DbTools;
+using Aiursoft.WingetCommunityServer.Data;
 
 namespace Aiursoft.Tracer.Tests.IntegrationTests;
 
@@ -25,6 +27,7 @@ public class BasicTests
     public async Task CreateServer()
     {
         _server = App<Startup>(Array.Empty<string>(), port: _port);
+        await _server.UpdateDbAsync<WingetServerDbContext>(UpdateMode.RecreateThenUse);
         await _server.StartAsync();
     }
 
@@ -43,5 +46,7 @@ public class BasicTests
     {
         var response = await _http.GetAsync(_endpointUrl + url);
         response.EnsureSuccessStatusCode(); // Status Code 200-299
+
+        Assert.IsTrue((await response.Content.ReadAsStringAsync()).Contains("$type"));
     }
 }
