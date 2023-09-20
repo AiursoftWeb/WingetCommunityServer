@@ -2,7 +2,7 @@ using static Aiursoft.WebTools.Extends;
 
 namespace Aiursoft.WingetCommunityServer;
 
-public class Program
+public static class Program
 {
     public static async Task Main(string[] args)
     {
