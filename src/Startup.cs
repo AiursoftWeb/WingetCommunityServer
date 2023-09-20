@@ -3,7 +3,6 @@ using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
 using System.Reflection;
 using Aiursoft.DocGenerator.Services;
-using Aiursoft.DbTools;
 using Aiursoft.DbTools.Sqlite;
 using Aiursoft.WingetCommunityServer.Data;
 
