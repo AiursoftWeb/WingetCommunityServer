@@ -12,7 +12,7 @@
   <ItemGroup>
     <PackageReference Include="Aiursoft.DbTools.Sqlite" Version="7.0.2" />
     <PackageReference Include="Aiursoft.DocGenerator" Version="7.0.0" />
-    <PackageReference Include="Aiursoft.WebTools" Version="7.0.4" />
+    <PackageReference Include="Aiursoft.WebTools" Version="7.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.12">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
