@@ -3,7 +3,7 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/-/blob/master/LICENSE)
 [![Pipeline stat](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/badges/master/pipeline.svg)](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/-/pipelines)
 [![Test Coverage](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/badges/master/coverage.svg)](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/-/pipelines)
-[![ManHours](https://manhours.aiursoft.cn/gitlab/gitlab.aiursoft.cn/aiursoft/WingetCommunityServer.svg)](https://gitlab.aiursoft.cn/aiursoft/WingetCommunityServer/-/commits/master?ref_type=heads)
+[![ManHours](https://manhours.aiursoft.cn/r/gitlab.aiursoft.cn/aiursoft/WingetCommunityServer.svg)](https://gitlab.aiursoft.cn/aiursoft/WingetCommunityServer/-/commits/master?ref_type=heads)
 
 WingetCommunityServer is a self-hosted winget server.
 
