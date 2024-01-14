@@ -1,0 +1,28 @@
+{
+    "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.PackageMetadata.PackageMetadataResponse, StoreEdgeFD",
+    "Data": {
+        "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.PackageMetadata.PackageMetadataData, StoreEdgeFD",
+        "SourceIdentifier": "StoreEdgeFD",
+        "SourceAgreements": {
+            "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.PackageMetadata.SourceAgreements, StoreEdgeFD",
+            "AgreementsIdentifier": "StoreEdgeFD",
+            "Agreements": [
+                {
+                    "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.PackageManifest.AgreementDetail, StoreEdgeFD",
+                    "AgreementLabel": "Terms of Transaction",
+                    "AgreementUrl": "https://aka.ms/microsoft-store-terms-of-transaction"
+                }
+            ]
+        },
+        "ServerSupportedVersions": [
+            "1.0.0",
+            "1.1.0"
+        ],
+        "RequiredQueryParameters": [
+            "market"
+        ],
+        "RequiredPackageMatchFields": [
+            "market"
+        ]
+    }
+}

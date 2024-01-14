@@ -21,13 +21,14 @@ public class ApiController: ControllerBase
     }
 
     [HttpGet("information")]
+    [Produces(typeof(PackageMetadataResponse<PackageMetadataData>))]
     public IActionResult Information()
     {
         return Ok(_informationBuilder.Build());
     }
 
     [HttpPost("manifestSearch")]
-    [Produces(typeof(ManifestSearchModel))]
+    [Produces(typeof(SearchAddressModel))]
     public IActionResult ManifestSearch([FromBody]SearchAddressModel model)
     {
         return Ok(new ManifestSearchModel

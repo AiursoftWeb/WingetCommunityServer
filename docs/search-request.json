@@ -1,0 +1,13 @@
+{
+	"Filters": [{
+		"PackageMatchField": "Market",
+		"RequestMatch": {
+			"KeyWord": "US",
+			"MatchType": "CaseInsensitive"
+		}
+	}],
+	"Query": {
+		"KeyWord": "python",
+		"MatchType": "Substring"
+	}
+}

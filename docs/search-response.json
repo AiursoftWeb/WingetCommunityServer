@@ -1,0 +1,125 @@
+{
+    "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchResponse, StoreEdgeFD",
+    "Data": [
+        {
+            "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchData, StoreEdgeFD",
+            "PackageIdentifier": "9NRWMJP3717K",
+            "PackageName": "Python 3.11",
+            "Publisher": "Python Software Foundation",
+            "Versions": [
+                {
+                    "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchVersion, StoreEdgeFD",
+                    "PackageVersion": "Unknown",
+                    "PackageFamilyNames": [
+                        "PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0"
+                    ]
+                }
+            ]
+        },
+        {
+            "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchData, StoreEdgeFD",
+            "PackageIdentifier": "9PJPW5LDXLZ5",
+            "PackageName": "Python 3.10",
+            "Publisher": "Python Software Foundation",
+            "Versions": [
+                {
+                    "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchVersion, StoreEdgeFD",
+                    "PackageVersion": "Unknown",
+                    "PackageFamilyNames": [
+                        "PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0"
+                    ]
+                }
+            ]
+        },
+        {
+            "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchData, StoreEdgeFD",
+            "PackageIdentifier": "9NCVDN91XZQP",
+            "PackageName": "Python 3.12",
+            "Publisher": "Python Software Foundation",
+            "Versions": [
+                {
+                    "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchVersion, StoreEdgeFD",
+                    "PackageVersion": "Unknown",
+                    "PackageFamilyNames": [
+                        "PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0"
+                    ]
+                }
+            ]
+        },
+        {
+            "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchData, StoreEdgeFD",
+            "PackageIdentifier": "9P7QFQMJRFP7",
+            "PackageName": "Python 3.9",
+            "Publisher": "Python Software Foundation",
+            "Versions": [
+                {
+                    "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchVersion, StoreEdgeFD",
+                    "PackageVersion": "Unknown",
+                    "PackageFamilyNames": [
+                        "PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0"
+                    ]
+                }
+            ]
+        },
+        {
+            "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchData, StoreEdgeFD",
+            "PackageIdentifier": "9NJ46SX7X90P",
+            "PackageName": "Python 3.7",
+            "Publisher": "Python Software Foundation",
+            "Versions": [
+                {
+                    "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchVersion, StoreEdgeFD",
+                    "PackageVersion": "Unknown",
+                    "PackageFamilyNames": [
+                        "PythonSoftwareFoundation.Python.3.7_qbz5n2kfra8p0"
+                    ]
+                }
+            ]
+        },
+        {
+            "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchData, StoreEdgeFD",
+            "PackageIdentifier": "9MSSZTT1N39L",
+            "PackageName": "Python 3.8",
+            "Publisher": "Python Software Foundation",
+            "Versions": [
+                {
+                    "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchVersion, StoreEdgeFD",
+                    "PackageVersion": "Unknown",
+                    "PackageFamilyNames": [
+                        "PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0"
+                    ]
+                }
+            ]
+        },
+        {
+            "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchData, StoreEdgeFD",
+            "PackageIdentifier": "9PBKTNDS9VSH",
+            "PackageName": "计算机二级 Python 考试题库",
+            "Publisher": "启程网络",
+            "Versions": [
+                {
+                    "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchVersion, StoreEdgeFD",
+                    "PackageVersion": "Unknown",
+                    "PackageFamilyNames": [
+                        "30203DEE513B8.Python_25j5yr1mrjxqp"
+                    ]
+                }
+            ]
+        },
+        {
+            "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchData, StoreEdgeFD",
+            "PackageIdentifier": "9MTJRHTGL9XV",
+            "PackageName": "Learn Python: Code Tutorial",
+            "Publisher": "Peaky Group",
+            "Versions": [
+                {
+                    "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.ManifestSearch.ManifestSearchVersion, StoreEdgeFD",
+                    "PackageVersion": "Unknown",
+                    "PackageFamilyNames": [
+                        "PeakyGroup.LearnPythonCoding_gwpxzqq55y3c2"
+                    ]
+                }
+            ]
+        }
+    ]
+}
