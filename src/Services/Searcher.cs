@@ -1,33 +1,41 @@
-﻿using WingetCommunityServer.Models;
+﻿using Aiursoft.WingetCommunityServer.Data;
+using Microsoft.EntityFrameworkCore;
+using WingetCommunityServer.Models;
 using WingetCommunityServer.Models.Database;
 
 namespace WingetCommunityServer.Services;
 
 public class Searcher
 {
-    public ManifestSearchResponse Search(SearchAddressModel model)
+    private readonly WingetServerDbContext _dbContext;
+
+    public Searcher(WingetServerDbContext dbContext)
     {
-        var mockData = new List<Package>
+        _dbContext = dbContext;
+    }
+    
+    public async Task<ManifestSearchResponse> Search(SearchAddressModel model)
+    {
+        var searchWord = model.Query?.KeyWord ?? string.Empty;
+        var query = _dbContext.Packages.AsQueryable();
+        switch (model.Query?.MatchType)
         {
-            new()
-            {
-                Id = "Python.Python.3.11",
-                Name = "Python 3.11",
-                Version = "3.11.7",
-                Publisher = "Python Software Foundation"
-            },
-            new()
-            {
-                Id = "Python.Python.3.10",
-                Name = "Python 3.10",
-                Version = "3.10.11",
-                Publisher = "Python Software Foundation"
-            }
-        };
-        
+            case "Substring":
+                query = query.Where(package => package.Name.Contains(searchWord));
+                break;
+            case "Exact":
+                query = query.Where(package => package.Name == searchWord);
+                break;
+            case "StartsWith":
+                query = query.Where(package => package.Name.StartsWith(searchWord));
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+        var result = await query.ToListAsync();
         return new ManifestSearchResponse
         {
-            Data = mockData.Select(package => new ManifestSearchData
+            Data = result.Select(package => new ManifestSearchData
             {
                 PackageIdentifier = package.Id,
                 PackageName = package.Name,

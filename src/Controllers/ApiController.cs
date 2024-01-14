@@ -32,9 +32,9 @@ public class ApiController: ControllerBase
 
     [HttpPost("manifestSearch")]
     [Produces(typeof(SearchAddressModel))]
-    public IActionResult ManifestSearch([FromBody]SearchAddressModel model)
+    public async Task<IActionResult> ManifestSearch([FromBody]SearchAddressModel model)
     {
-        return Ok(_searcher.Search(model));
+        return Ok(await _searcher.Search(model));
     }
 
     [HttpGet("packageManifests/{**packageIdentifier}")]
