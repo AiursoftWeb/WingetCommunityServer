@@ -1,62 +1,69 @@
-# WingetCommunityServer
+# Winget Community Server
 
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/-/blob/master/LICENSE)
-[![Pipeline stat](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/badges/master/pipeline.svg)](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/-/pipelines)
-[![Test Coverage](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/badges/master/coverage.svg)](https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver/-/pipelines)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://gitlab.aiursoft.cn/aiursoft/WingetCommunityServer/-/blob/master/LICENSE)
+[![Pipeline stat](https://gitlab.aiursoft.cn/aiursoft/WingetCommunityServer/badges/master/pipeline.svg)](https://gitlab.aiursoft.cn/aiursoft/WingetCommunityServer/-/pipelines)
+[![Test Coverage](https://gitlab.aiursoft.cn/aiursoft/WingetCommunityServer/badges/master/coverage.svg)](https://gitlab.aiursoft.cn/aiursoft/WingetCommunityServer/-/pipelines)
 [![ManHours](https://manhours.aiursoft.cn/r/gitlab.aiursoft.cn/aiursoft/WingetCommunityServer.svg)](https://gitlab.aiursoft.cn/aiursoft/WingetCommunityServer/-/commits/master?ref_type=heads)
+[![Docker](https://img.shields.io/badge/docker-latest-blue?logo=docker)](https://hub.aiursoft.cn/#!/taglist/aiursoft/WingetCommunityServer)
 
-WingetCommunityServer is a self-hosted winget server.
+Winget Community Server is a community server for [Microsoft's winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
 
-## Run locally
+## Run in Ubuntu
+
+The following script will install\update this app on your Ubuntu server. Supports Ubuntu 22.04.
+
+On your Ubuntu server, run the following command:
+
+```bash
+curl -sL https://gitlab.aiursoft.cn/aiursoft/WingetCommunityServer/-/raw/master/install.sh | sudo bash
+```
+
+Of course it is suggested that append a custom port number to the command:
+
+```bash
+curl -sL https://gitlab.aiursoft.cn/aiursoft/WingetCommunityServer/-/raw/master/install.sh | sudo bash -s 8080
+```
+
+It will install the app as a systemd service, and start it automatically. Binary files will be located at `/opt/apps`. Service files will be located at `/etc/systemd/system`.
+
+## Run manually
 
 Requirements about how to run
 
-1. [.NET 7 SDK](http://dot.net/)
-2. Execute `dotnet run` to run the app
-3. Use your browser to view [http://localhost:5000](http://localhost:5000)
+1. Install [.NET 7 SDK](http://dot.net/) and [Node.js](https://nodejs.org/).
+2. Execute `npm install` at `wwwroot` folder to install the dependencies.
+3. Execute `dotnet run` to run the app.
+4. Use your browser to view [http://localhost:5000](http://localhost:5000).
 
 ## Run in Microsoft Visual Studio
 
 1. Open the `.sln` file in the project path.
-2. Press `F5`.
+2. Press `F5` to run the app.
 
-## How to connect with Winget client
+## Run in Docker
 
-First, you need to know the endpoint of your server. For example, `https://localhost:8080/api`.
+First, install Docker [here](https://docs.docker.com/get-docker/).
 
-Then, you need to add the source to your winget client.
-
-```bash
-winget source add -n local-server https://localhost:8080/api -t Microsoft.Rest
-```
-
-Now you can search and install packages.
+Then run the following commands in a Linux shell:
 
 ```bash
-winget search vlc --source local-server
-winget install vlc --source local-server
+image=hub.aiursoft.cn/aiursoft/WingetCommunityServer
+appName=WingetCommunityServer
+docker pull $image
+docker run -d --name $appName --restart unless-stopped -p 5000:5000 -v /var/www/$appName:/data $image
 ```
 
-### Additional tips
+That will start a web server at `http://localhost:5000` and you can test the app.
 
-To view the added source:
+The docker image has the following context:
 
-```bash
-winget source list --name local-server
-```
-
-You can delete existing system sources via:
-
-```bash
-winget source remove winget
-winget source remove msstore
-```
-
-To reset everything to default:
-
-```bash
-winget source reset --force
-```
+| Properties  | Value                           |
+|-------------|---------------------------------|
+| Image       | hub.aiursoft.cn/aiursoft/WingetCommunityServer|
+| Ports       | 5000                            |
+| Binary path | /app                            |
+| Data path   | /data                           |
+| Config path | /data/appsettings.json          |
 
 ## How to contribute
 
