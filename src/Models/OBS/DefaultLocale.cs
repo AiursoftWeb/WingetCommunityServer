@@ -67,5 +67,5 @@ public class DefaultLocale
     /// <summary>
     /// 
     /// </summary>
-    public List<AgreementsItem> Agreements { get; set; } = new List<AgreementsItem>();
+    public List<AgreementDetail> Agreements { get; set; } = new List<AgreementDetail>();
 }

@@ -16,26 +16,9 @@ public class InformationBuilder
     public PackageMetadataResponse<PackageMetadataData> Build()
     {
         // Reference: https://storeedgefd.dsx.mp.microsoft.com/v9.0/information
-        var fullType = $"{_serverConfig.Type}, {_serverConfig.SourceIdentifier}";
-
         return new PackageMetadataResponse<PackageMetadataData>(_serverConfig.Type!, _serverConfig.SourceIdentifier!)
         {
-            Data = new PackageMetadataData(_serverConfig.Type!, _serverConfig.SourceIdentifier!)
-            {
-                ServerSupportedVersions = new List<string>
-                {
-                    "1.0.0",
-                    "1.1.0"
-                },
-                RequiredQueryParameters = new List<string>()
-                {
-                    "market"
-                },
-                RequiredPackageMatchFields = new List<string>()
-                {
-                    "market"
-                }
-            }
+            Data = new PackageMetadataData(_serverConfig.Type!, _serverConfig.SourceIdentifier!, _serverConfig.AgreementUrl!)
         };
     }
 }
