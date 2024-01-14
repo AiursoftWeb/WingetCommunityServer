@@ -2,6 +2,6 @@
 
 public class ServerConfig
 {
-    public string? Type { get; set; }
-    public string? ServerIdentifier { get; set; }
+    public string? Type { get; init; }
+    public string? SourceIdentifier { get; init; }
 }

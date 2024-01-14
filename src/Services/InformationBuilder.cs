@@ -16,14 +16,12 @@ public class InformationBuilder
     public PackageMetadataResponse<PackageMetadataData> Build()
     {
         // Reference: https://storeedgefd.dsx.mp.microsoft.com/v9.0/information
-        var fullType = $"{_serverConfig.Type}, {_serverConfig.ServerIdentifier}";
+        var fullType = $"{_serverConfig.Type}, {_serverConfig.SourceIdentifier}";
 
-        return new PackageMetadataResponse<PackageMetadataData>(_serverConfig.Type!, _serverConfig.ServerIdentifier!)
+        return new PackageMetadataResponse<PackageMetadataData>(_serverConfig.Type!, _serverConfig.SourceIdentifier!)
         {
-            Type = fullType,
-            Data = new PackageMetadataData(_serverConfig.Type!, _serverConfig.ServerIdentifier!)
+            Data = new PackageMetadataData(_serverConfig.Type!, _serverConfig.SourceIdentifier!)
             {
-                SourceIdentifier = _serverConfig.ServerIdentifier!,
                 ServerSupportedVersions = new List<string>
                 {
                     "1.0.0",

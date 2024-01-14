@@ -10,8 +10,8 @@ public class PackageMetadataData : WingetEntity
         SourceIdentifier = identifier;
         SourceAgreements = new SourceAgreements(@namespace, identifier);
     }
-    public required string SourceIdentifier { get; init; }
-    public SourceAgreements SourceAgreements { get; init; }
+    public string SourceIdentifier { get; private init; }
+    public SourceAgreements SourceAgreements { get; private init; }
     public required List<string> ServerSupportedVersions { get; init; } 
     public required List<string> RequiredQueryParameters { get; init; } 
     public required List<string> RequiredPackageMatchFields { get; init; }
