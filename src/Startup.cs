@@ -1,7 +1,6 @@
 ﻿using Aiursoft.WebTools.Models;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
-using System.Reflection;
 using Aiursoft.DocGenerator.Services;
 using Aiursoft.DbTools.Sqlite;
 using Aiursoft.WingetCommunityServer.Data;
@@ -12,13 +11,15 @@ namespace Aiursoft.WingetCommunityServer
     {
         public void ConfigureServices(IConfiguration configuration, IWebHostEnvironment environment, IServiceCollection services)
         {
-            services.AddAiurSqliteWithCache<WingetServerDbContext>("Data Source=app.db");
+            var connectionString = configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+            services.AddAiurSqliteWithCache<WingetServerDbContext>(connectionString);
             services
                 .AddMemoryCache()
                 .AddHttpClient();
             services
                 .AddControllers()
-                .AddApplicationPart(Assembly.GetExecutingAssembly())
+                .AddApplicationPart(typeof(Startup).Assembly)
                 .AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
