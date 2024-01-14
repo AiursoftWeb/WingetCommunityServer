@@ -16,7 +16,10 @@ public class InformationBuilder
     public PackageMetadataResponse<PackageMetadataData> Build()
     {
         // Reference: https://storeedgefd.dsx.mp.microsoft.com/v9.0/information
-        return new PackageMetadataResponse<PackageMetadataData>(_serverConfig.Type!, _serverConfig.SourceIdentifier!)
+        return new PackageMetadataResponse<PackageMetadataData>(
+            @namespace: _serverConfig.Type!,
+            type: nameof(PackageMetadataResponse<object>),
+            identifier: _serverConfig.SourceIdentifier!)
         {
             Data = new PackageMetadataData(_serverConfig.Type!, _serverConfig.SourceIdentifier!, _serverConfig.AgreementUrl!)
         };

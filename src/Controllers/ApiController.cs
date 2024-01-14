@@ -9,13 +9,16 @@ namespace WingetCommunityServer.Controllers;
 [Route("api")]
 public class ApiController: ControllerBase
 {
+    private readonly Searcher _searcher;
     private readonly InformationBuilder _informationBuilder;
     private readonly ILogger<ApiController> _logger;
 
     public ApiController(
+        Searcher searcher,
         InformationBuilder informationBuilder,
         ILogger<ApiController> logger)
     {
+        _searcher = searcher;
         _informationBuilder = informationBuilder;
         _logger = logger;
     }
@@ -31,10 +34,7 @@ public class ApiController: ControllerBase
     [Produces(typeof(SearchAddressModel))]
     public IActionResult ManifestSearch([FromBody]SearchAddressModel model)
     {
-        return Ok(new ManifestSearchModel
-        {
-            Data = new List<DataItem>() { new() }
-        });
+        return Ok(_searcher.Search(model));
     }
 
     [HttpGet("packageManifests/{**packageIdentifier}")]

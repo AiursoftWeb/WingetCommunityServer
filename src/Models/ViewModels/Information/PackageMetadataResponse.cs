@@ -7,8 +7,8 @@ public class PackageMetadataResponse<T> : WingetEntity
     [JsonProperty(PropertyName = "Data")]
     public required T Data { get; set; }
 
-    public PackageMetadataResponse(string @namespace, string identifier) 
-        : base(@namespace, nameof(PackageMetadataResponse<object>), identifier)
+    public PackageMetadataResponse(string @namespace, string type, string identifier) 
+        : base(@namespace, type, identifier)
     {
     }
 }

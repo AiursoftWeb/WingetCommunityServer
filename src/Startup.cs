@@ -20,6 +20,7 @@ namespace Aiursoft.WingetCommunityServer
             var serverConfig = configuration.GetSection("Server");
             services.Configure<ServerConfig>(serverConfig);
             services.AddTransient<InformationBuilder>();
+            services.AddTransient<Searcher>();
             services
                 .AddMemoryCache()
                 .AddHttpClient();
