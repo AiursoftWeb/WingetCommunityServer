@@ -1,6 +1,7 @@
 using Aiursoft.DocGenerator.Attributes;
 using Microsoft.AspNetCore.Mvc;
 using WingetCommunityServer.Models;
+using WingetCommunityServer.Models.ViewModels.Manifest;
 using WingetCommunityServer.Services;
 
 namespace WingetCommunityServer.Controllers;
@@ -38,11 +39,11 @@ public class ApiController: ControllerBase
     }
 
     [HttpGet("packageManifests/{**packageIdentifier}")]
-    [Produces(typeof(PackageManifestModel))]
+    [Produces(typeof(PackageManifestResponse))]
     public IActionResult PackageManifests([FromRoute] string packageIdentifier)
     {
         _logger.LogInformation($"Get package id: {packageIdentifier}");
-        return Ok(new PackageManifestModel
+        return Ok(new PackageManifestResponse
         {
             Data = new PackageManifestData()
         });

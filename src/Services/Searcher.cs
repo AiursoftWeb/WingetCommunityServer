@@ -1,7 +1,6 @@
 ﻿using Aiursoft.WingetCommunityServer.Data;
 using Microsoft.EntityFrameworkCore;
 using WingetCommunityServer.Models;
-using WingetCommunityServer.Models.Database;
 
 namespace WingetCommunityServer.Services;
 
@@ -16,23 +15,30 @@ public class Searcher
     
     public async Task<ManifestSearchResponse> Search(SearchAddressModel model)
     {
-        var searchWord = model.Query?.KeyWord ?? string.Empty;
+        var searchWord = model.Query?.KeyWord?.ToLower() ?? string.Empty;
         var query = _dbContext.Packages.AsQueryable();
         switch (model.Query?.MatchType)
         {
             case "Substring":
-                query = query.Where(package => package.Name.Contains(searchWord));
+                query = query.Where(package => 
+                    package.Name.ToLower().Contains(searchWord) ||
+                    package.Id.ToLower().Contains(searchWord));
                 break;
             case "Exact":
-                query = query.Where(package => package.Name == searchWord);
+                query = query.Where(package => 
+                    package.Name.ToLower() == searchWord ||
+                    package.Id.ToLower() == searchWord);
                 break;
             case "StartsWith":
-                query = query.Where(package => package.Name.StartsWith(searchWord));
+                query = query.Where(package => 
+                    package.Name.ToLower().StartsWith(searchWord) ||
+                    package.Id.ToLower().StartsWith(searchWord));
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
         var result = await query.ToListAsync();
+        
         return new ManifestSearchResponse
         {
             Data = result.Select(package => new ManifestSearchData

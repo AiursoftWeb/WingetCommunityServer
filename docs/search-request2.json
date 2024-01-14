@@ -1,0 +1,48 @@
+{
+    "Filters": [
+        {
+            "PackageMatchField": "Market",
+            "RequestMatch": {
+                "KeyWord": "US",
+                "MatchType": "CaseInsensitive"
+            }
+        }
+    ],
+    "Inclusions": [
+        {
+            "PackageMatchField": "PackageFamilyName",
+            "RequestMatch": {
+                "KeyWord": "Python.Python.3.11",
+                "MatchType": "Exact"
+            }
+        },
+        {
+            "PackageMatchField": "ProductCode",
+            "RequestMatch": {
+                "KeyWord": "Python.Python.3.11",
+                "MatchType": "Exact"
+            }
+        },
+        {
+            "PackageMatchField": "PackageIdentifier",
+            "RequestMatch": {
+                "KeyWord": "Python.Python.3.11",
+                "MatchType": "CaseInsensitive"
+            }
+        },
+        {
+            "PackageMatchField": "PackageName",
+            "RequestMatch": {
+                "KeyWord": "Python.Python.3.11",
+                "MatchType": "CaseInsensitive"
+            }
+        },
+        {
+            "PackageMatchField": "Moniker",
+            "RequestMatch": {
+                "KeyWord": "Python.Python.3.11",
+                "MatchType": "CaseInsensitive"
+            }
+        }
+    ]
+}

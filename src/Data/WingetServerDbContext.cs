@@ -10,5 +10,11 @@ namespace Aiursoft.WingetCommunityServer.Data
         }
         
         public DbSet<Package> Packages => Set<Package>();
+        
+        public DbSet<PackageVersion> PackageVersions => Set<PackageVersion>();
+        
+        public DbSet<PackageVersionLocale> PackageVersionLocales => Set<PackageVersionLocale>();
+        
+        public DbSet<PackageVersionInstaller> PackageVersionInstallers => Set<PackageVersionInstaller>();
     }
 }
