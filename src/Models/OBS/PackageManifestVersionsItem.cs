@@ -8,12 +8,12 @@ public class PackageManifestVersionsItem
     /// 
     /// </summary>
     [JsonProperty(PropertyName = "$type")]
-    public string Type { get; set; } = Consts.CommonType;
+    public string Type { get; set; } = ObsoleteConsts.CommonType;
 
     /// <summary>
     /// 
     /// </summary>
-    public string PackageVersion { get; set; } = Consts.FakePackageVersion;
+    public string PackageVersion { get; set; } = ObsoleteConsts.FakePackageVersion;
 
     /// <summary>
     /// 

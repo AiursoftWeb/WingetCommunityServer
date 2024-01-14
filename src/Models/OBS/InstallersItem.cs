@@ -8,16 +8,16 @@ public class InstallersItem
     /// 
     /// </summary>
     [JsonProperty(PropertyName = "$type")]
-    public string Type { get; set; } = Consts.CommonType;
+    public string Type { get; set; } = ObsoleteConsts.CommonType;
 
     /// <summary>
     /// 
     /// </summary>
-    public string InstallerSha256 { get; set; } = Consts.FakePackageInstallSha256;
+    public string InstallerSha256 { get; set; } = ObsoleteConsts.FakePackageInstallSha256;
     /// <summary>
     /// 
     /// </summary>
-    public string InstallerUrl { get; set; } = Consts.FakePackageInstallUrl;
+    public string InstallerUrl { get; set; } = ObsoleteConsts.FakePackageInstallUrl;
     /// <summary>
     /// 
     /// </summary>
@@ -41,7 +41,7 @@ public class InstallersItem
     /// <summary>
     /// 
     /// </summary>
-    public string InstallerType { get; set; } = Consts.FakePackageInstallType;
+    public string InstallerType { get; set; } = ObsoleteConsts.FakePackageInstallType;
     /// <summary>
     /// 
     /// </summary>

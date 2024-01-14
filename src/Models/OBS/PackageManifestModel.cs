@@ -8,7 +8,7 @@ public class PackageManifestModel
     /// 
     /// </summary>
     [JsonProperty(PropertyName = "$type")]
-    public string Type { get; set; } = Consts.CommonType;
+    public string Type { get; set; } = ObsoleteConsts.CommonType;
 
     /// <summary>
     /// 

@@ -8,7 +8,7 @@ public class DefaultLocale
     /// 
     /// </summary>
     [JsonProperty(PropertyName = "$type")]
-    public string Type { get; set; } = Consts.CommonType;
+    public string Type { get; set; } = ObsoleteConsts.CommonType;
 
     /// <summary>
     /// 
@@ -18,7 +18,7 @@ public class DefaultLocale
     /// <summary>
     /// 
     /// </summary>
-    public string Publisher { get; set; } = Consts.FakePackagePublisher;
+    public string Publisher { get; set; } = ObsoleteConsts.FakePackagePublisher;
 
     /// <summary>
     /// 
@@ -38,7 +38,7 @@ public class DefaultLocale
     /// <summary>
     /// 
     /// </summary>
-    public string PackageName { get; set; } = Consts.FakePackageName;
+    public string PackageName { get; set; } = ObsoleteConsts.FakePackageName;
 
     /// <summary>
     /// 

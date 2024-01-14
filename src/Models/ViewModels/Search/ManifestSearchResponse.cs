@@ -1,6 +1,6 @@
-﻿namespace WingetCommunityServer.Services;
+﻿namespace WingetCommunityServer.Models;
 
-public class ManifestSearchResponse : List<ManifestSearchData>
+public class ManifestSearchResponse : WingetEntity
 {
-    
+    public required List<ManifestSearchData> Data { get; init; } = new();
 }

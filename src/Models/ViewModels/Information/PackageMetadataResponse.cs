@@ -2,13 +2,8 @@ using Newtonsoft.Json;
 
 namespace WingetCommunityServer.Models;
 
-public class PackageMetadataResponse<T> : WingetEntity
+public class PackageMetadataResponse : WingetEntity
 {
     [JsonProperty(PropertyName = "Data")]
-    public required T Data { get; set; }
-
-    public PackageMetadataResponse(string @namespace, string type, string identifier) 
-        : base(@namespace, type, identifier)
-    {
-    }
+    public required PackageMetadataData Data { get; init; }
 }

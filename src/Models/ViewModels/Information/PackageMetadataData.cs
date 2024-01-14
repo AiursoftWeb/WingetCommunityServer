@@ -1,12 +1,13 @@
-﻿namespace WingetCommunityServer.Models;
+﻿using Aiursoft.WingetCommunityServer;
+
+namespace WingetCommunityServer.Models;
 
 public class PackageMetadataData : WingetEntity
 {
-    public PackageMetadataData(string @namespace, string identifier, string agreementUrl) 
-        : base(@namespace, nameof(PackageMetadataData), identifier)
+    public PackageMetadataData(string agreementUrl) 
     {
-        SourceIdentifier = identifier;
-        SourceAgreements = new SourceAgreements(@namespace, identifier, agreementUrl);
+        SourceIdentifier = Consts.ServerId;
+        SourceAgreements = new SourceAgreements(agreementUrl);
         ServerSupportedVersions = new List<string>
         {
             "1.0.0",

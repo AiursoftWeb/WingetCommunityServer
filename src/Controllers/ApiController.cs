@@ -24,7 +24,7 @@ public class ApiController: ControllerBase
     }
 
     [HttpGet("information")]
-    [Produces(typeof(PackageMetadataResponse<PackageMetadataData>))]
+    [Produces(typeof(PackageMetadataResponse))]
     public IActionResult Information()
     {
         return Ok(_informationBuilder.Build());

@@ -1,19 +1,12 @@
-﻿using WingetCommunityServer.Models;
-
-namespace WingetCommunityServer.Services;
+﻿namespace WingetCommunityServer.Models;
 
 public class ManifestSearchData : WingetEntity
 {
-    public ManifestSearchData(string @namespace, string identifier) 
-        : base(@namespace, nameof(ManifestSearchData), identifier)
-    {
-    }
-    
-    public required string PackageIdentifier { get; set; }
+    public required string PackageIdentifier { get; init; }
 
-    public required string PackageName { get; set; }
+    public required string PackageName { get; init; }
 
-    public required string Publisher { get; set; }
+    public required string Publisher { get; init; }
 
-    public required List<ManifestSearchVersion> Versions { get; set; }
+    public required List<ManifestSearchVersion> Versions { get; init; }
 }

@@ -1,28 +1,23 @@
-﻿namespace WingetCommunityServer.Models;
+﻿using Aiursoft.WingetCommunityServer;
+
+namespace WingetCommunityServer.Models;
 
 public class SourceAgreements : WingetEntity
 {
-    public SourceAgreements(string @namespace, string identifier, string agreementUrl)
-        : base(@namespace, nameof(SourceAgreements), identifier)
+    public SourceAgreements(string agreementUrl)
     {
-        AgreementsIdentifier = identifier;
         if (!string.IsNullOrWhiteSpace(agreementUrl))
         {
-            Agreements.Add(new AgreementDetail(@namespace, identifier)
+            Agreements.Add(new AgreementDetail
             {
                 AgreementUrl = agreementUrl
             });
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    public string AgreementsIdentifier { get; init; }
+    // ReSharper disable once UnusedMember.Global
+    public string AgreementsIdentifier => Consts.ServerId;
 
-    /// <summary>
-    /// 
-    /// </summary>
     // ReSharper disable once MemberCanBePrivate.Global
     // ReSharper disable once CollectionNeverQueried.Global
     public List<AgreementDetail> Agreements { get; } = new();

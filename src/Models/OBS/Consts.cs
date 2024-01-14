@@ -1,7 +1,7 @@
 ﻿namespace WingetCommunityServer.Models;
 
 [Obsolete]
-public class Consts
+public class ObsoleteConsts
 {
     public const string CommonType = $"WingetCommunityServer.Entity, {ServerName}";
 

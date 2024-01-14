@@ -8,22 +8,22 @@ public class DataItem
     /// 
     /// </summary>
     [JsonProperty(PropertyName = "$type")]
-    public string Type { get; set; } = Consts.CommonType;
+    public string Type { get; set; } = ObsoleteConsts.CommonType;
 
     /// <summary>
     /// 
     /// </summary>
-    public string PackageIdentifier { get; set; } = Consts.FakePackageIdentifier;
+    public string PackageIdentifier { get; set; } = ObsoleteConsts.FakePackageIdentifier;
 
     /// <summary>
     /// 
     /// </summary>
-    public string PackageName { get; set; } = Consts.FakePackageName;
+    public string PackageName { get; set; } = ObsoleteConsts.FakePackageName;
 
     /// <summary>
     /// 
     /// </summary>
-    public string Publisher { get; set; } = Consts.FakePackagePublisher;
+    public string Publisher { get; set; } = ObsoleteConsts.FakePackagePublisher;
 
     /// <summary>
     /// 

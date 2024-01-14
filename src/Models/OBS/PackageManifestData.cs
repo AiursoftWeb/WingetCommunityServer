@@ -8,12 +8,12 @@ public class PackageManifestData
     /// 
     /// </summary>
     [JsonProperty(PropertyName = "$type")]
-    public string Type { get; set; } = Consts.CommonType;
+    public string Type { get; set; } = ObsoleteConsts.CommonType;
 
     /// <summary>
     /// 
     /// </summary>
-    public string PackageIdentifier { get; set; } = Consts.FakePackageIdentifier;
+    public string PackageIdentifier { get; set; } = ObsoleteConsts.FakePackageIdentifier;
 
     /// <summary>
     /// 

@@ -8,7 +8,7 @@ public class AppsAndFeaturesEntriesItem
     /// 
     /// </summary>
     [JsonProperty(PropertyName = "$type")] 
-    public string Type { get; set; } = Consts.CommonType;
+    public string Type { get; set; } = ObsoleteConsts.CommonType;
 
     /// <summary>
     /// 
@@ -34,5 +34,5 @@ public class AppsAndFeaturesEntriesItem
     /// Available types: 
     /// https://github.com/microsoft/winget-cli/blob/master/src/AppInstallerCommonCore/Manifest/ManifestCommon.cpp
     /// </summary>
-    public string InstallerType { get; set; } = Consts.FakePackageInstallType;
+    public string InstallerType { get; set; } = ObsoleteConsts.FakePackageInstallType;
 }

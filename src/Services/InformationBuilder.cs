@@ -13,15 +13,11 @@ public class InformationBuilder
         _serverConfig = serverConfig.Value;
     }
     
-    public PackageMetadataResponse<PackageMetadataData> Build()
+    public PackageMetadataResponse Build()
     {
-        // Reference: https://storeedgefd.dsx.mp.microsoft.com/v9.0/information
-        return new PackageMetadataResponse<PackageMetadataData>(
-            @namespace: _serverConfig.Type!,
-            type: nameof(PackageMetadataResponse<object>),
-            identifier: _serverConfig.SourceIdentifier!)
+        return new PackageMetadataResponse
         {
-            Data = new PackageMetadataData(_serverConfig.Type!, _serverConfig.SourceIdentifier!, _serverConfig.AgreementUrl!)
+            Data = new PackageMetadataData(_serverConfig.AgreementUrl!)
         };
     }
 }
