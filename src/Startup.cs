@@ -4,6 +4,8 @@ using Newtonsoft.Json;
 using Aiursoft.DocGenerator.Services;
 using Aiursoft.DbTools.Sqlite;
 using Aiursoft.WingetCommunityServer.Data;
+using WingetCommunityServer.Models.Configuration;
+using WingetCommunityServer.Services;
 
 namespace Aiursoft.WingetCommunityServer
 {
@@ -14,6 +16,10 @@ namespace Aiursoft.WingetCommunityServer
             var connectionString = configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
             services.AddAiurSqliteWithCache<WingetServerDbContext>(connectionString);
+
+            var serverConfig = configuration.GetSection("Server");
+            services.Configure<ServerConfig>(serverConfig);
+            services.AddTransient<InformationBuilder>();
             services
                 .AddMemoryCache()
                 .AddHttpClient();

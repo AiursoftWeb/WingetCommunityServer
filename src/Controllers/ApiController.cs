@@ -1,6 +1,7 @@
 using Aiursoft.DocGenerator.Attributes;
 using Microsoft.AspNetCore.Mvc;
 using WingetCommunityServer.Models;
+using WingetCommunityServer.Services;
 
 namespace WingetCommunityServer.Controllers;
 
@@ -8,18 +9,21 @@ namespace WingetCommunityServer.Controllers;
 [Route("api")]
 public class ApiController: ControllerBase
 {
+    private readonly InformationBuilder _informationBuilder;
     private readonly ILogger<ApiController> _logger;
 
     public ApiController(
+        InformationBuilder informationBuilder,
         ILogger<ApiController> logger)
     {
+        _informationBuilder = informationBuilder;
         _logger = logger;
     }
 
     [HttpGet("information")]
     public IActionResult Information()
     {
-        return Ok(new InformationModel());
+        return Ok(_informationBuilder.Build());
     }
 
     [HttpPost("manifestSearch")]
@@ -28,7 +32,7 @@ public class ApiController: ControllerBase
     {
         return Ok(new ManifestSearchModel
         {
-            Data = new List<DataItem>() { new DataItem() }
+            Data = new List<DataItem>() { new() }
         });
     }
 
