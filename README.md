@@ -75,6 +75,9 @@ Then, you need to add the source to your winget client.
 winget source add -n local-server https://localhost:8080/api -t Microsoft.Rest
 ```
 
+> :warning: **Winget enforce trusted HTTPS connection!!!**
+> To debug locally, you need to use your own certificate and add it to your trusted root certificate store.
+
 Now you can search and install packages.
 
 ```bash
