@@ -4,7 +4,7 @@
 [![Pipeline stat](https://gitlab.aiursoft.cn/aiursoft/WingetCommunityServer/badges/master/pipeline.svg)](https://gitlab.aiursoft.cn/aiursoft/WingetCommunityServer/-/pipelines)
 [![Test Coverage](https://gitlab.aiursoft.cn/aiursoft/WingetCommunityServer/badges/master/coverage.svg)](https://gitlab.aiursoft.cn/aiursoft/WingetCommunityServer/-/pipelines)
 [![ManHours](https://manhours.aiursoft.cn/r/gitlab.aiursoft.cn/aiursoft/WingetCommunityServer.svg)](https://gitlab.aiursoft.cn/aiursoft/WingetCommunityServer/-/commits/master?ref_type=heads)
-[![Docker](https://img.shields.io/badge/docker-latest-blue?logo=docker)](https://hub.aiursoft.cn/#!/taglist/aiursoft/WingetCommunityServer)
+[![Docker](https://img.shields.io/badge/docker-latest-blue?logo=docker)](https://hub.aiursoft.cn/#!/taglist/aiursoft/wingetcommunityserver)
 
 Winget Community Server is a community server for [Microsoft's winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/)
 
