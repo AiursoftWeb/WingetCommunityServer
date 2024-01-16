@@ -2,7 +2,7 @@ aiur() { arg="$( cut -d ' ' -f 2- <<< "$@" )" && curl -sL https://gitlab.aiursof
 
 app_name="winget-community-server"
 repo_path="https://gitlab.aiursoft.cn/aiursoft/wingetcommunityserver"
-proj_path="src/Aiursoft.WingetCommunityServer.csproj"
+proj_path="src/Aiursoft.WingetCommunityServer/Aiursoft.WingetCommunityServer.csproj"
 
 get_dll_name()
 {
