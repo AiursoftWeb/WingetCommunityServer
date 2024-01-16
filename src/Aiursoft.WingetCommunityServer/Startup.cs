@@ -23,6 +23,7 @@ namespace Aiursoft.WingetCommunityServer
             var pathConfig = configuration.GetSection("Storage");
             services.Configure<StorageConfig>(pathConfig);
             services.Configure<ServerConfig>(serverConfig);
+            services.AddScoped<Seeder.Seeder>();
             services.AddTransient<InformationBuilder>();
             services.AddTransient<Searcher>();
             services
