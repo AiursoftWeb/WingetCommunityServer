@@ -1,4 +1,4 @@
-ARG CSPROJ_PATH="./src/Aiursoft.WingetCommunityServer"
+ARG CSPROJ_PATH="./src/Aiursoft.WingetCommunityServer/"
 ARG PROJ_NAME="Aiursoft.WingetCommunityServer"
 
 
