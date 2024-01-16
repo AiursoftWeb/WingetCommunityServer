@@ -37,7 +37,7 @@
                             "$type": "Microsoft.Marketplace.Storefront.StoreEdgeFD.BusinessLogic.Response.PackageManifest.AgreementDetail, StoreEdgeFD",
                             "AgreementLabel": "Pricing",
                             "Agreement": "Free"
-                        },
+                        }
                     ]
                 },
                 "Locales": [],
