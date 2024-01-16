@@ -10,7 +10,7 @@ public static class Program
     public static async Task Main(string[] args)
     {
         var app = App<Startup>(args);
-        await app.UpdateDbAsync<WingetServerDbContext>(UpdateMode.MigrateThenUse);
+        await app.UpdateDbAsync<WingetServerDbContext>(UpdateMode.CreateThenUse);
         await app.SeedAsync();
         await app.RunAsync();
     }
