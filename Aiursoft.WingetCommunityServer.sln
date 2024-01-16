@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aiursoft.WingetCommunityServer", "src\Aiursoft.WingetCommunityServer.csproj", "{3D383B36-9E3E-4B02-980F-E4D3F39A70E5}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aiursoft.WingetCommunityServer.Tests", "tests\Aiursoft.WingetCommunityServer.Tests.csproj", "{D25CD61D-DB89-4804-9CEC-506509BF804C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6676653D-21BF-4572-8412-97488375835D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{122E2583-61B3-4974-8148-41FEB958E6E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aiursoft.WingetCommunityServer", "src\Aiursoft.WingetCommunityServer\Aiursoft.WingetCommunityServer.csproj", "{065992B1-3FBA-4AF2-91B4-CDD609EC7C7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aiursoft.WingetCommunityServer.Seeder", "src\Aiursoft.WingetCommunityServer.Seeder\Aiursoft.WingetCommunityServer.Seeder.csproj", "{3F86DB34-C345-4D0F-BFD2-A255AE05F2A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aiursoft.WingetCommunityServer.Database", "src\Aiursoft.WingetCommunityServer.Database\Aiursoft.WingetCommunityServer.Database.csproj", "{908887CD-9AC5-4A8D-8E9B-AE249726CB3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,14 +21,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3D383B36-9E3E-4B02-980F-E4D3F39A70E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3D383B36-9E3E-4B02-980F-E4D3F39A70E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3D383B36-9E3E-4B02-980F-E4D3F39A70E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3D383B36-9E3E-4B02-980F-E4D3F39A70E5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D25CD61D-DB89-4804-9CEC-506509BF804C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D25CD61D-DB89-4804-9CEC-506509BF804C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D25CD61D-DB89-4804-9CEC-506509BF804C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D25CD61D-DB89-4804-9CEC-506509BF804C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{065992B1-3FBA-4AF2-91B4-CDD609EC7C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{065992B1-3FBA-4AF2-91B4-CDD609EC7C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{065992B1-3FBA-4AF2-91B4-CDD609EC7C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{065992B1-3FBA-4AF2-91B4-CDD609EC7C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F86DB34-C345-4D0F-BFD2-A255AE05F2A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F86DB34-C345-4D0F-BFD2-A255AE05F2A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F86DB34-C345-4D0F-BFD2-A255AE05F2A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F86DB34-C345-4D0F-BFD2-A255AE05F2A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{908887CD-9AC5-4A8D-8E9B-AE249726CB3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{908887CD-9AC5-4A8D-8E9B-AE249726CB3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{908887CD-9AC5-4A8D-8E9B-AE249726CB3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{908887CD-9AC5-4A8D-8E9B-AE249726CB3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -33,7 +45,9 @@ Global
 		SolutionGuid = {8E0F4756-CFE0-4DA2-B2B8-772EF9CB127F}
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{3D383B36-9E3E-4B02-980F-E4D3F39A70E5} = {6676653D-21BF-4572-8412-97488375835D}
 		{D25CD61D-DB89-4804-9CEC-506509BF804C} = {122E2583-61B3-4974-8148-41FEB958E6E1}
+		{065992B1-3FBA-4AF2-91B4-CDD609EC7C7C} = {6676653D-21BF-4572-8412-97488375835D}
+		{3F86DB34-C345-4D0F-BFD2-A255AE05F2A2} = {6676653D-21BF-4572-8412-97488375835D}
+		{908887CD-9AC5-4A8D-8E9B-AE249726CB3C} = {6676653D-21BF-4572-8412-97488375835D}
 	EndGlobalSection
 EndGlobal

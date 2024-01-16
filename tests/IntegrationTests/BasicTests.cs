@@ -1,12 +1,11 @@
 ﻿using Aiursoft.CSTools.Tools;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.Extensions.Hosting;
-using static Aiursoft.WebTools.Extends;
-using Aiursoft.WingetCommunityServer;
 using Aiursoft.DbTools;
-using Aiursoft.WingetCommunityServer.Data;
+using Aiursoft.WingetCommunityServer.Database;
+using Microsoft.Extensions.Hosting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using static Aiursoft.WebTools.Extends;
 
-namespace Aiursoft.Tracer.Tests.IntegrationTests;
+namespace Aiursoft.WingetCommunityServer.Tests.IntegrationTests;
 
 [TestClass]
 public class BasicTests
