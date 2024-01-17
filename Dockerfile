@@ -33,8 +33,8 @@ COPY --from=build-env /app .
 
 RUN sed -i 's/DataSource=app.db/DataSource=\/data\/app.db/g' appsettings.json
 RUN sed -i 's/\/tmp\/data/\/data/g' appsettings.json
-RUN apt update && apt install -y git
 RUN mkdir -p /data
+RUN apt update && apt install -y git
 
 VOLUME /data
 EXPOSE 5000
