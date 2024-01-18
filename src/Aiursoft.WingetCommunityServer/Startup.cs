@@ -1,9 +1,9 @@
-﻿using Aiursoft.WebTools.Models;
-using Newtonsoft.Json.Serialization;
+﻿using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
 using Aiursoft.DocGenerator.Services;
 using Aiursoft.DbTools.Sqlite;
 using Aiursoft.GitRunner;
+using Aiursoft.WebTools.Abstractions.Models;
 using Aiursoft.WingetCommunityServer.Database;
 using Aiursoft.WingetCommunityServer.Middlewares;
 using Aiursoft.WingetCommunityServer.Seeder.Configuration;
