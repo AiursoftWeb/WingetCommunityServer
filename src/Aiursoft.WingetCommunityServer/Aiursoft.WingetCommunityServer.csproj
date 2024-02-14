@@ -11,7 +11,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Aiursoft.DocGenerator" Version="7.0.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.16" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aiursoft.WingetCommunityServer.Seeder\Aiursoft.WingetCommunityServer.Seeder.csproj" />
