@@ -8,6 +8,8 @@ public class Package
     [Key]
     public int DatabaseId { get; set; }
     
+    [MaxLength(256)]
+    
     public required string Id { get; init; }
     
     [InverseProperty(nameof(PackageVersion.Package))]
