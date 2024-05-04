@@ -5,6 +5,8 @@ public class SparkInstaller : WingetEntity
     public string InstallerSha256 { get; set; } = null!;
     public string InstallerUrl { get; set; } = null!;
     public string InstallerLocale { get; set; } = null!;
+    
+    // ReSharper disable once InconsistentNaming
     public string MinimumOSVersion { get; set; } = null!;
     public InstallerSwitch InstallerSwitches { get; set; } = new();
     public List<AppsAndFeaturesEntry> AppsAndFeaturesEntries { get; set; } = new();
