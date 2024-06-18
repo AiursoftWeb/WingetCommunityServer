@@ -12,7 +12,7 @@
   <ItemGroup>
     <PackageReference Include="Aiursoft.GitRunner" Version="8.0.8" />
     <PackageReference Include="Aiursoft.WebTools" Version="8.0.20" />
-    <PackageReference Include="YamlDotNet" Version="15.1.6" />
+    <PackageReference Include="YamlDotNet" Version="15.3.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aiursoft.WingetCommunityServer.Database\Aiursoft.WingetCommunityServer.Database.csproj" />
