@@ -10,7 +10,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Aiursoft.DocGenerator" Version="8.0.4" />
+    <PackageReference Include="Aiursoft.DocGenerator" Version="8.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="9.0.0" />
   </ItemGroup>
   <ItemGroup>
