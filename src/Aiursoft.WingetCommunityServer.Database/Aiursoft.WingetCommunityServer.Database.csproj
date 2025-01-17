@@ -10,7 +10,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Aiursoft.DbTools.Sqlite" Version="9.0.4" />
+    <PackageReference Include="Aiursoft.DbTools.Sqlite" Version="9.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.1" />
   </ItemGroup>
 </Project>
